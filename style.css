@@ -1,0 +1,180 @@
+body{
+margin:0;
+background:#f4f6fb;
+font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+color:#001b3a;
+}
+
+.app{
+padding:34px;
+padding-top:60px;
+}
+
+.top{
+display:flex;
+justify-content:flex-end;
+margin-bottom:20px;
+}
+
+.close{
+color:#2563eb;
+font-size:18px;
+font-weight:500;
+}
+
+h1{
+font-size:58px;
+line-height:.95;
+margin:0 0 30px;
+font-weight:700;
+}
+
+.dropdown{
+background:#eceffd;
+border-radius:22px;
+padding:24px;
+display:flex;
+justify-content:space-between;
+font-size:22px;
+margin-bottom:32px;
+}
+
+.arrow{
+color:#2563eb;
+font-size:28px;
+}
+
+.notice-card{
+background:#fff;
+border:2px dashed #dce2f2;
+border-radius:30px;
+padding:28px;
+margin-bottom:28px;
+}
+
+.notice-card h2{
+font-size:28px;
+margin:0 0 20px;
+}
+
+.notice-card p{
+font-size:22px;
+color:#7b8594;
+line-height:1.4;
+}
+
+.notice-card a,
+.links a,
+.update-link,
+.show-more,
+.empty-card a{
+display:block;
+color:#2563eb;
+font-size:22px;
+text-decoration:none;
+margin-top:18px;
+}
+
+.credit-card,
+.insurance-card,
+.year-card{
+background:white;
+border-radius:30px;
+overflow:hidden;
+margin-bottom:34px;
+box-shadow:0 8px 30px rgba(0,0,0,.04);
+}
+
+.credit-header,
+.insurance-header,
+.year-header{
+display:flex;
+justify-content:space-between;
+padding:28px;
+font-size:24px;
+font-weight:700;
+}
+
+.credit-header h2,
+.insurance-header h2{
+margin:0;
+font-size:28px;
+max-width:80%;
+}
+
+.credit-bottom,
+.year-content{
+padding:28px;
+border-top:1px solid #e6ebf3;
+font-size:22px;
+}
+
+.big-title{
+font-size:42px;
+margin:34px 0 18px;
+}
+
+.links{
+display:flex;
+gap:42px;
+margin-bottom:26px;
+}
+
+.divider{
+height:1px;
+background:#e6ebf3;
+}
+
+.content{
+padding:28px;
+}
+
+.content h3{
+font-size:28px;
+margin-top:0;
+}
+
+.company{
+font-size:22px;
+line-height:1.4;
+}
+
+.month{
+margin-top:26px;
+}
+
+.month span,
+.label{
+display:block;
+font-size:20px;
+color:#7b8594;
+margin-bottom:8px;
+}
+
+.month strong,
+.value{
+font-size:22px;
+font-weight:400;
+}
+
+.tax-block{
+margin-bottom:34px;
+}
+
+.show-more{
+text-align:center;
+margin:30px 0;
+}
+
+.empty-card{
+border:2px dashed #dce2f2;
+border-radius:30px;
+padding:30px;
+background:white;
+margin-bottom:80px;
+}
+
+.empty-card p{
+color:#7b8594;
+font-size:22px;
+}
