@@ -1,88 +1,94 @@
 body{
 margin:0;
 background:#f4f6fb;
-font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
 color:#001b3a;
+-webkit-font-smoothing:antialiased;
 }
 
 .app{
-padding:34px;
-padding-top:60px;
+padding:32px;
+padding-top:58px;
+max-width:430px;
+margin:auto;
 }
 
 .top{
 display:flex;
 justify-content:flex-end;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .close{
 color:#2563eb;
-font-size:18px;
+font-size:16px;
 font-weight:500;
 }
 
 h1{
-font-size:58px;
-line-height:.95;
-margin:0 0 30px;
+font-size:38px;
+line-height:1;
+margin:0 0 26px;
 font-weight:700;
+letter-spacing:-1px;
 }
 
 .dropdown{
-background:#eceffd;
-border-radius:22px;
-padding:24px;
+background:#eef1fb;
+border-radius:18px;
+padding:18px 22px;
 display:flex;
 justify-content:space-between;
-font-size:22px;
-margin-bottom:32px;
+align-items:center;
+font-size:18px;
+font-weight:500;
+margin-bottom:24px;
 }
 
 .arrow{
 color:#2563eb;
-font-size:28px;
+font-size:22px;
 }
 
 .notice-card{
 background:#fff;
-border:2px dashed #dce2f2;
-border-radius:30px;
-padding:28px;
-margin-bottom:28px;
+border:2px dashed #dce3f3;
+border-radius:24px;
+padding:24px;
+margin-bottom:22px;
 }
 
 .notice-card h2{
-font-size:28px;
-margin:0 0 20px;
+font-size:22px;
+margin:0 0 12px;
+font-weight:700;
 }
 
 .notice-card p{
-font-size:22px;
-color:#7b8594;
-line-height:1.4;
+font-size:16px;
+line-height:1.5;
+color:#7a8699;
+margin:0;
+max-width:280px;
 }
 
-.notice-card a,
-.links a,
-.update-link,
-.show-more,
-.empty-card a{
+.notice-card a{
 display:block;
+margin-top:20px;
 color:#2563eb;
-font-size:22px;
+font-size:16px;
 text-decoration:none;
-margin-top:18px;
+font-weight:500;
 }
 
 .credit-card,
 .insurance-card,
 .year-card{
-background:white;
-border-radius:30px;
+background:#fff;
+border-radius:26px;
 overflow:hidden;
-margin-bottom:34px;
-box-shadow:0 8px 30px rgba(0,0,0,.04);
+margin-bottom:24px;
+box-shadow:0 8px 20px rgba(30,60,90,.04);
 }
 
 .credit-header,
@@ -90,91 +96,156 @@ box-shadow:0 8px 30px rgba(0,0,0,.04);
 .year-header{
 display:flex;
 justify-content:space-between;
-padding:28px;
-font-size:24px;
-font-weight:700;
+align-items:flex-start;
+padding:22px 24px;
 }
 
 .credit-header h2,
 .insurance-header h2{
 margin:0;
-font-size:28px;
-max-width:80%;
+font-size:22px;
+line-height:1.25;
+font-weight:700;
+max-width:75%;
 }
 
-.credit-bottom,
-.year-content{
-padding:28px;
-border-top:1px solid #e6ebf3;
-font-size:22px;
+.credit-header span,
+.insurance-header span,
+.year-header span:last-child{
+font-size:30px;
+color:#2563eb;
+line-height:1;
+}
+
+.credit-bottom{
+padding:20px 24px;
+border-top:1px solid #e7ebf2;
+font-size:16px;
 }
 
 .big-title{
-font-size:42px;
-margin:34px 0 18px;
+font-size:30px;
+line-height:1.1;
+font-weight:700;
+margin:34px 0 12px;
+letter-spacing:-0.5px;
 }
 
 .links{
 display:flex;
-gap:42px;
-margin-bottom:26px;
+gap:36px;
+margin-bottom:18px;
+}
+
+.links a,
+.update-link,
+.show-more,
+.empty-card a{
+color:#2563eb;
+font-size:16px;
+text-decoration:none;
+font-weight:500;
+}
+
+.update-link{
+text-align:right;
+margin-bottom:16px;
 }
 
 .divider{
 height:1px;
-background:#e6ebf3;
+background:#e8edf5;
 }
 
 .content{
-padding:28px;
+padding:22px 24px;
 }
 
 .content h3{
-font-size:28px;
-margin-top:0;
+font-size:20px;
+margin:0 0 18px;
+font-weight:700;
 }
 
 .company{
-font-size:22px;
-line-height:1.4;
+font-size:16px;
+line-height:1.45;
+max-width:280px;
+margin-bottom:22px;
 }
 
 .month{
-margin-top:26px;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+padding:14px 0;
+border-bottom:1px solid #eef2f7;
+}
+
+.month:last-child{
+border-bottom:none;
 }
 
 .month span,
 .label{
-display:block;
-font-size:20px;
-color:#7b8594;
-margin-bottom:8px;
+font-size:15px;
+color:#7d8797;
 }
 
 .month strong,
 .value{
-font-size:22px;
+font-size:16px;
 font-weight:400;
+color:#001b3a;
+}
+
+.year-header{
+font-size:18px;
+font-weight:700;
+}
+
+.year-content{
+padding:20px 24px;
 }
 
 .tax-block{
-margin-bottom:34px;
+margin-bottom:24px;
+}
+
+.tax-block:last-child{
+margin-bottom:0;
+}
+
+.label{
+margin-bottom:8px;
+display:block;
+}
+
+.value{
+font-size:18px;
 }
 
 .show-more{
 text-align:center;
-margin:30px 0;
+margin:20px 0 40px;
+font-size:18px;
 }
 
 .empty-card{
-border:2px dashed #dce2f2;
-border-radius:30px;
-padding:30px;
-background:white;
-margin-bottom:80px;
+border:2px dashed #dce3f3;
+border-radius:24px;
+padding:24px;
+background:#fff;
+margin-bottom:60px;
 }
 
 .empty-card p{
-color:#7b8594;
-font-size:22px;
+margin:0 0 18px;
+font-size:16px;
+color:#7d8797;
+}
+
+.empty-card a{
+display:block;
+margin-top:16px;
 }
