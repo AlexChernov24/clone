@@ -2,176 +2,161 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Госуслуги">
+<meta name="theme-color" content="#f2f5f9">
+<title>Госуслуги — Документы и данные</title>
+<style>
+  :root{
+    --accent:#0d4cd3;
+    --dark:#0e2b4a;
+    --gray:#7f8b9c;
+    --bg:#f2f5f9;
+    --card:#fbfcfe;
+    --line:#e6ebf2;
+    --dash:#c9d4e3;
+    --sel:#e2e8f6;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;}
+  body{background:#e9eef4;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--dark);}
+  .app{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg);box-shadow:0 0 30px rgba(15,42,75,.10);}
+  a{color:var(--accent);text-decoration:none;}
 
-<title>Документы и данные</title>
+  /* ── Липкая шапка «закрыть» + отступ под статус-бар iOS ── */
+  .hdr{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top);}
+  .close{display:flex;justify-content:flex-end;padding:20px 18px 16px;}
+  .close a{font-size:15px;font-weight:600;}
 
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css?v=2">
+  .content{padding:4px 18px calc(56px + env(safe-area-inset-bottom));}
+
+  h1{font-size:30px;line-height:1.2;font-weight:700;margin:30px 0 22px;}
+  h2{margin:34px 0 16px;font-size:24px;font-weight:700;}
+
+  .select{display:flex;align-items:center;justify-content:space-between;height:56px;border-radius:12px;background:var(--sel);padding:0 18px;font-size:17px;}
+
+  .dashed{border:1px dashed var(--dash);border-radius:14px;padding:24px 18px;margin-top:28px;}
+  .dashed h3{margin:0 0 10px;font-size:19px;font-weight:700;}
+  .dashed p{margin:0 0 16px;font-size:15px;line-height:1.5;color:var(--gray);}
+  .link{font-size:16px;display:inline-block;}
+  .block{display:block;margin-top:18px;}
+  .notfound{font-size:16px;color:var(--gray);margin:0 0 4px;}
+
+  .card{background:var(--card);border-radius:14px;margin-top:18px;box-shadow:0 2px 6px rgba(13,42,75,.05);overflow:hidden;}
+  .card-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 18px;font-size:20px;font-weight:700;}
+  .card-h.top{align-items:flex-start;}
+  .card-h .chev{flex:none;margin-top:2px;}
+  .card-h.top .chev{margin-top:4px;}
+  .card-b{border-top:1px solid var(--line);padding:18px;}
+  .plain{margin:0;font-size:16px;}
+  .year{margin:0 0 16px;font-size:17px;font-weight:700;}
+  .company{margin:0 0 20px;font-size:16px;line-height:1.5;}
+  .lbl{margin:0 0 6px;font-size:15px;color:var(--gray);}
+  .val{margin:0;font-size:17px;}
+  .group + .group{margin-top:20px;}
+
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 16px;}
+  .sec-head h2{margin:0;}
+  .sec-head a{font-size:16px;}
+  .actions{display:flex;gap:30px;margin:0 0 4px;}
+  .actions a{font-size:16px;}
+  .more{text-align:center;margin:26px 0 4px;}
+  .more a{font-size:17px;}
+</style>
 </head>
-
 <body>
-
 <div class="app">
 
-<div class="top">
-  <span class="close">закрыть</span>
-</div>
-
-<h1>Документы и данные</h1>
-
-<div class="dropdown">
-  <span>Доходы и налоги</span>
-  <span class="arrow">⌄</span>
-</div>
-
-<div class="notice-card">
-
-  <h2>Налоговые уведомления</h2>
-
-  <p>
-    Подключите и узнавайте о своих налогах вовремя
-  </p>
-
-  <a href="#">Подключить</a>
-
-</div>
-
-<div class="credit-card">
-
-  <div class="credit-header">
-    <h2>Запрет на получение кредитов</h2>
-    <span>›</span>
+  <div class="hdr">
+    <div class="close"><a href="#">закрыть</a></div>
   </div>
 
-  <div class="credit-bottom">
-    Запрет установлен с 26.08.2025
-  </div>
+  <main class="content">
 
+    <h1>Документы и данные</h1>
+
+    <div class="select">
+      <span>Доходы и налоги</span>
+      <svg width="16" height="9" viewBox="0 0 16 9" fill="none"><path d="M1 1l7 7 7-7" stroke="#0d4cd3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <section class="dashed">
+      <h3>Налоговые уведомления</h3>
+      <p>Подключите и узнавайте о своих налогах вовремя</p>
+      <a href="#" class="link">Подключить</a>
+    </section>
+
+    <section class="card">
+      <div class="card-h top">
+        <span>Запрет на получение кредитов</span>
+        <svg class="chev" width="9" height="15" viewBox="0 0 9 15" fill="none"><path d="M1.5 1.5l6 6-6 6" stroke="#0d4cd3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="card-b">
+        <p class="plain">Запрет установлен с 26.08.2025</p>
+      </div>
+    </section>
+
+    <h2>Доходы и страховые взносы</h2>
+    <div class="actions">
+      <a href="#">Скачать</a>
+      <a href="#">Обновить</a>
+    </div>
+
+    <section class="card">
+      <div class="card-h">
+        <span>Страховые взносы</span>
+        <svg class="chev" width="9" height="15" viewBox="0 0 9 15" fill="none"><path d="M1.5 1.5l6 6-6 6" stroke="#0d4cd3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="card-b">
+        <p class="year">2025 год</p>
+        <p class="company">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ГАНЗА ТРЕЙДИНГ ГРУПП"</p>
+        <div class="group"><p class="lbl">Ноябрь</p><p class="val">35&nbsp;359,30&nbsp;₽</p></div>
+        <div class="group"><p class="lbl">Октябрь</p><p class="val">33&nbsp;000,00&nbsp;₽</p></div>
+        <div class="group"><p class="lbl">Сентябрь</p><p class="val">33&nbsp;000,00&nbsp;₽</p></div>
+      </div>
+    </section>
+
+    <div class="sec-head">
+      <h2>Справки 2-НДФЛ</h2>
+      <a href="#">Обновить</a>
+    </div>
+
+    <section class="card">
+      <div class="card-h">
+        <span>2022</span>
+        <svg class="chev" width="9" height="15" viewBox="0 0 9 15" fill="none"><path d="M1.5 1.5l6 6-6 6" stroke="#0d4cd3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="card-b">
+        <div class="group"><p class="lbl">Доход</p><p class="val">570&nbsp;104,24&nbsp;₽</p></div>
+        <div class="group"><p class="lbl">Налог</p><p class="val">65&nbsp;030,00&nbsp;₽</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-h">
+        <span>2021</span>
+        <svg class="chev" width="9" height="15" viewBox="0 0 9 15" fill="none"><path d="M1.5 1.5l6 6-6 6" stroke="#0d4cd3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="card-b">
+        <div class="group"><p class="lbl">Доход</p><p class="val">44&nbsp;304,45&nbsp;₽</p></div>
+        <div class="group"><p class="lbl">Налог</p><p class="val">77,00&nbsp;₽</p></div>
+      </div>
+    </section>
+
+    <div class="more"><a href="#">Показать ещё</a></div>
+
+    <h2>Доходы по самозанятости</h2>
+
+    <section class="dashed">
+      <p class="notfound">Данные не найдены 19.01.2026</p>
+      <a href="#" class="link block">Повторить</a>
+      <a href="#" class="link block">Почему так произошло</a>
+    </section>
+
+  </main>
 </div>
-
-<h2 class="big-title">
-Доходы и страховые взносы
-</h2>
-
-<div class="links">
-  <a href="#">Скачать</a>
-  <a href="#">Обновить</a>
-</div>
-
-<div class="insurance-card">
-
-<div class="insurance-header">
-  <h2>Страховые взносы</h2>
-  <span>›</span>
-</div>
-
-<div class="divider"></div>
-
-<div class="content">
-
-<h3>2025 год</h3>
-
-<p class="company">
-ОБЩЕСТВО С ОГРАНИЧЕННОЙ
-ОТВЕТСТВЕННОСТЬЮ
-"ГАНЗА ТРЕЙДИНГ ГРУПП"
-</p>
-
-<div class="month">
-  <span>Ноябрь</span>
-  <strong>35 359,30 ₽</strong>
-</div>
-
-<div class="month">
-  <span>Октябрь</span>
-  <strong>33 000,00 ₽</strong>
-</div>
-
-<div class="month">
-  <span>Сентябрь</span>
-  <strong>33 000,00 ₽</strong>
-</div>
-
-</div>
-</div>
-
-<h2 class="big-title">
-Справки 2-НДФЛ
-</h2>
-
-<div class="update-link">
-Обновить
-</div>
-
-<div class="year-card">
-
-<div class="year-header">
-<span>2022</span>
-<span>›</span>
-</div>
-
-<div class="divider"></div>
-
-<div class="year-content">
-
-<div class="tax-block">
-<div class="label">Доход</div>
-<div class="value">570 104,24 ₽</div>
-</div>
-
-<div class="tax-block">
-<div class="label">Налог</div>
-<div class="value">65 030,00 ₽</div>
-</div>
-
-</div>
-
-</div>
-
-<div class="year-card">
-
-<div class="year-header">
-<span>2021</span>
-<span>›</span>
-</div>
-
-<div class="divider"></div>
-
-<div class="year-content">
-
-<div class="tax-block">
-<div class="label">Доход</div>
-<div class="value">44 304,45 ₽</div>
-</div>
-
-<div class="tax-block">
-<div class="label">Налог</div>
-<div class="value">77,00 ₽</div>
-</div>
-
-</div>
-
-</div>
-
-<div class="show-more">
-Показать ещё
-</div>
-
-<h2 class="big-title">
-Доходы по самозанятости
-</h2>
-
-<div class="empty-card">
-
-<p>Данные не найдены 19.01.2026</p>
-
-<a href="#">Повторить</a>
-<a href="#">Почему так произошло</a>
-
-</div>
-
-</div>
-
 </body>
 </html>
